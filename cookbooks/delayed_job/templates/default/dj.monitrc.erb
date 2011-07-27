@@ -1,6 +1,6 @@
 check process <%= @worker_name %>
   with pidfile /data/<%= @app_name %>/shared/pids/<%= @worker_name %>.pid
-  start program = "RAILS_ENV=<%= @framework_env %> /data/<%= @app_name %>/current/script/delayed_job -i <%= @identifier %> -p /data/<%= @app_name %>/shared/pids start" as uid <%= @user %>
-  stop program =  "RAILS_ENV=<%= @framework_env %> /data/<%= @app_name %>/current/script/delayed_job -i <%= @identifier %> -p /data/<%= @app_name %>/shared/pids stop"  as uid <%= @user %>
+  start program = "env RAILS_ENV=<%= @framework_env %> /data/<%= @app_name %>/current/script/delayed_job -i <%= @identifier %> -p /data/<%= @app_name %>/shared/pids start" as uid <%= @user %>
+  stop program =  "env RAILS_ENV=<%= @framework_env %> /data/<%= @app_name %>/current/script/delayed_job -i <%= @identifier %> -p /data/<%= @app_name %>/shared/pids stop"  as uid <%= @user %>
   if totalmem is greater than 300 MB then restart # eating up memory?
   group dj_<%= @app_name %>
