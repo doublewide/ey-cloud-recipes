@@ -55,3 +55,4 @@ require_recipe "memcached"
 #require_recipe "mysql_administrative_tools"
 
 require_recipe "delayed_job"
+require_recipe "wkhtmltopdf"
