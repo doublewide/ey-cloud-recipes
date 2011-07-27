@@ -1,3 +1,1 @@
-default[:wkhtmltopdf][:version] = '0.10.0_rc2'
-default[:wkhtmltopdf][:arch] = 'i386'
-default[:wkhtmltopdf][:binary] = '/usr/local/bin/wkhtmltopdf'
+wkhtmltopdf :version => '0.10.0_rc2', :arch => 'i386', :binary => '/usr/local/bin/wkhtmltopdf'
